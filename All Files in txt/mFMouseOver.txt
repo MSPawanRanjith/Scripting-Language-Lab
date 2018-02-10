@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>On Mouse</title>
+		<script>
+			window.onload=function(){
+				var tesla=[
+				{
+					"model":"Tesla1",
+					"name":"Tesla1",
+					"year":2007,
+					"price":"23455"
+				},
+				{
+					"model":"Tesla2",
+					"name":"Tesla2",
+					"year":2017,
+					"price":"34555"
+				},
+				{
+					"model":"Tesla3",
+					"name":"Tesla3",
+					"year":2347,
+					"price":"45455"
+				}	
+				];
+				
+				tesla.forEach(function(item,index){
+					listele=document.createElement("th");
+					listele.id=item.model;
+					listele.innerHTML=item.name;
+					document.getElementById("menu").appendChild(listele);
+				})
+				tesla.forEach(mouseOverHandler);
+				function mouseOverHandler(item,index){
+					var ele=document.getElementById(item.model);
+					ele.onmouseover=function(){
+						var detail=item;
+						if(detail!=null){
+							document.getElementById("table-data").removeAttribute("hidden");
+							document.getElementById("name").innerHTML=detail.name;
+							document.getElementById("year").innerHTML=detail.year;
+							document.getElementById("price").innerHTML=detail.price;
+							document.getElementById("image").innerHTML="<img src='/"+item.model+"'/>";
+							
+						}
+						
+					}
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+		<tr id ="menu"></tr>
+		</table>
+		
+		<table id="table-data" hidden>
+		<tr><td id="name"></td></tr>
+		<tr><td id="year"></td></tr>
+		<tr><td id="price"></td></tr>
+		<tr><td id="image"></td></tr>
+		</table>
+		
+		
+	</body>
+</html>
+

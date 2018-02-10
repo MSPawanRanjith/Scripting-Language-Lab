@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1 id="heading" onmouseover="toggle()" onmouseout="toggle()">PIZZA</h1>
+<img src="/home/mssprrg/Pictures/harley-network-wall.jpg"id="image" style="display:none;"/>
+<ol id="pizzalist">
+<li>Veggie Pizza</li>
+</ol>
+<form id="pizza" >
+	<p>Variety Of Pizza</p>
+	<input type="text" id ="variety" name="variety" required/>
+	<input type="button" name="action" onclick="return addlist()" value="ADD"/>
+</form>
+<script>
+	function toggle(){
+		var ele=document.getElementById("image");
+		if(ele.style.display=="block"){
+			ele.style.display="none";
+		}
+		else{
+			ele.style.display="block";
+		}
+	}
+	function addlist(){
+		var form=document.getElementById("pizza"); 
+		ele=document.createElement("li");
+		ele.innerHTML=form.variety.value;
+		document.getElementById("pizzalist").appendChild(ele);	
+		return true;
+	}
+</script>
+<body>
+</html>

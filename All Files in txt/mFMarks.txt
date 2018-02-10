@@ -1,0 +1,39 @@
+<html>
+<body>
+<form>
+	<input type="number"  id="sub1" onchange="valid('sub1','gr1')"required> GRADE : <input type="text" id="gr1" value=""disabled><br>
+	<input type="number"  id="sub2" onchange="valid('sub2','gr2')"required> GRADE : <input type="text" id="gr2" value=""disabled><br>
+	<input type="number" id="result" value="0" disabled>
+</form>
+<script>
+	function valid(id,gr){
+		//alert(gr);
+		var num=parseInt(document.getElementById(id).value);
+		if (num>0 && num <=100){
+			document.getElementById(gr).value=getmark(num);
+			var m1=parseInt(document.getElementById("sub1").value);
+			var m2=parseInt(document.getElementById("sub2").value);
+			document.getElementById("result").value=m1+m2;
+		}
+		else{
+			alert("invalid");
+			return false;
+		}
+		
+		
+		
+	}
+	function getmark(num){
+		if (num>=90){
+			return "S";
+		}
+		else if (num<90 && num>70){
+			return "A";
+		}
+		else{
+			return "B";
+		}
+	} 
+</script>
+</body>
+</html>

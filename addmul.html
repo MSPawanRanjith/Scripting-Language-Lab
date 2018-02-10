@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>ADD AND MUL</title>
+	</head>
+	<body>
+		<form id="addmul">
+			<h3>First </h3><input name="first" type="number" min="0" required="true"></input><br>
+			<h3>Second</h3><input name="second" type="number" min="0" required="true"></input><br>
+			<input type="button" name="add" onclick="return addAndMul(this)" value="ADD"></input>
+			<input type="button" name="mul" onclick="return addAndMul(this)" value="MUL"></input>
+		</form>
+		<h1 id="result"></h1>
+		
+		<script>
+		function addAndMul(button){
+			var form= document.getElementById("addmul");
+			if(button.value=="ADD"){
+				if(parseInt(form.first.value)>=0 && parseInt(form.second.value)>=0){
+					document.getElementById("result").innerHTML=parseInt(form.first.value)+parseInt(form.second.value);
+					return true;
+				}
+				else{
+					alert("Positive Number first ");
+					return false;
+				}
+			}
+			if(button.value=="MUL"){
+				if(parseInt(form.first.value)>=0 && parseInt(form.second.value)>=0){
+					document.getElementById("result").innerHTML=form.first.value*form.second.value;
+					return true;
+				}
+				else{
+					alert("Positive Number ");
+					return false;
+				}
+		
+			}
+			
+		}
+		
+		
+		</script>
+	</body>
+	
+</html>

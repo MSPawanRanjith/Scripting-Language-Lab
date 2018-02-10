@@ -1,0 +1,31 @@
+<html>
+<body>
+<p>{{msg}}</p>
+<h1>{{bal}}</h1>
+<h3>{{count}}</h3>
+<form action="{{url_for('banking')}}" method="POST" id ="register">
+	<input type="number" name="amt" min="0" required/><br>
+	<input type="submit" name="action" value="Withdraw" onclick="return valid(this)"/>
+	<input type="submit" name="action" value="Deposit" onclick="return valid(this)"/>
+	
+</form>
+<script>
+	function valid(button){
+		var form=document.getElementById("register");
+		if(parseInt(form.amt.value)<=0){
+			alert ("no negative");
+			return false;
+		}
+		if(form.action.value="Withdraw" && parseInt(form.amt.value)>5000){
+			alert("Too much amt");
+			return false;
+		}
+		if(form.action.value="Deposit" && parseInt(form.amt.value)>10000){
+			alert("Too much amt to deposit");
+			return false;
+		}
+		return true;
+	}
+</script>
+</body>
+</html>

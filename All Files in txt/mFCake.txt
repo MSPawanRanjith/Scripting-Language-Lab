@@ -1,0 +1,51 @@
+<html>
+<body>
+<form id="cake">
+	<input type="radio" name="store" id="cakeradio" value="cakestore">
+	<img src="/"/><br>
+	<p>Cost 100</p><br>
+	<input type="numbers" name="cakeqty"><br>
+	<input type="radio" name="store" id="cookieradio" value="cookiestore">
+	<img src="/"/><br>
+	<p>Cost 50</p><br>
+	<input type="numbers" name="cookieqty"><br>
+	<input type="submit" onclick="king()" value="Order">
+</form>
+
+<script>
+function test(){
+	
+	var form=document.getElementById("cake");
+	var cakeselected=document.getElementById("cakeradio");
+	var cookieqty=parseInt(form.cookieqty.value);
+	var cakeqty=parseInt(form.cakeqty.value);
+	alert("Hi");
+	
+}
+	function king(){
+	
+	var form=document.getElementById("cake");
+		var cakeselected=document.getElementById("cakeradio");
+		var cookieselected=document.getElementById("cookieradio");
+		var cookieqty=parseInt(form.cookieqty.value);
+		var cakeqty=parseInt(form.cakeqty.value);
+		
+		if(cakeselected.checked && cakeqty>0){
+			alert("TOTAL : "+cakeqty*100);
+			return true;
+		}
+		else if(cookieselected.checked && cookieqty>0){
+			alert("TOTAL : "+cookieqty*50);
+			return true;
+		}
+		else{
+			alert("Invalid datat");
+			return true;
+		}
+		alert("hi");
+		
+		
+	}
+</script>
+</body>
+</html>

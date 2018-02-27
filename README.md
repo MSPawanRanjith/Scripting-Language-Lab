@@ -19,8 +19,7 @@ It contains SL Lab program 2017 syllabus.
  It has simple python tutorial problems and usage of pandas library to work with data set. It also contain Flask program, which is a MVC web-framework built on python.
 ### Cmd to execute python/Flask Program
 
-    $ python <filename>.py
-    
+```$ python3 <filename>.py```
 ### JavaScript Program
 Its used for client Side validation for Flask Application.
 ### To execute Js/HTML 
